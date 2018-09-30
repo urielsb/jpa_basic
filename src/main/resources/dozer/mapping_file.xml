@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<configuration>
+		<custom-converters>
+			<converter type="com.uriel.JpaBasic.utils.MapperDateConverter">
+				<class-a>java.util.Date</class-a>
+				<class-b>java.time.LocalDateTime</class-b>
+			</converter>
+		</custom-converters>
+	</configuration>
+	<mapping>
+		<class-a>com.uriel.JpaBasic.persistence.entity.BankAccountEntity</class-a>
+		<class-b>com.uriel.JpaBasic.bean.BankAccountBean</class-b>
+		<field>
+			<a>id</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>balanceAmount</a>
+			<b>balanceAmount</b>
+		</field>
+		<field>
+			<a>lastTransactionTime</a>
+			<b>lastTransaction</b>
+		</field> 
+		<field>
+			<a>depositDetails</a>
+			<b>fixedDepositDetails</b>
+		</field>
+	</mapping>
+	<mapping>
+		<class-a>com.uriel.JpaBasic.persistence.entity.FixedDepositDetailsEntity</class-a>
+		<class-b>com.uriel.JpaBasic.bean.FixedDepositDetailsBean</class-b>
+		<field>
+			<a>crationDate</a>
+			<b>creationDate</b>
+		</field>
+	</mapping>
+</mappings>
